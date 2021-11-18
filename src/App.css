@@ -1,38 +1,111 @@
-.App {
+html {
+  background: rgb(142, 72, 250);
+  background: linear-gradient(
+    0deg,
+    rgba(142, 72, 250, 1) 0%,
+    rgba(89, 111, 249, 1) 100%
+  );
+  height: 100vh;
+  width: 100vw;
+}
+
+.app {
+  /* this image should be wider, setting background-size: cover stretches image */
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  overflow-y: hidden;
+}
+
+#logo-image {
+  position: absolute;
+  top: 4%;
+  left: 4%;
+}
+
+.card {
+  width: 40%;
+  background: white;
+  border-radius: 15px;
+  padding: 22px;
   text-align: center;
+  margin: auto;
+  margin-top: 10vh;
+  max-width: 640px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card h1 {
+  margin: auto 15%;
+  color: #222e49;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.card p {
+  opacity: 0.3;
+  font-size: 16px;
+}
+
+.card .topCardImage {
+  top: -50%;
+  width: 90%;
+  font-size: 36px;
+  box-shadow: -1px 18px 22px -7px rgba(84, 84, 84, 0.6);
+  -webkit-box-shadow: -1px 18px 22px -7px rgba(84, 84, 84, 0.6);
+  -moz-box-shadow: -1px 18px 22px -7px rgba(84, 84, 84, 0.6);
+  margin-top: -40px;
+}
+
+.card .button-wrapper {
+  margin-top: 16px;
+}
+
+.card .button-wrapper button {
+  position: relative;
+  width: 47%;
+  padding: 12px;
+  border: #e7ebee solid 1px;
+  border-radius: 15px;
+  margin: 6px;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  transition: top ease 1.5s;
+  color: #9597a0;
+}
+
+.card .button-wrapper button:hover {
+  top: -6px;
+  color: #222e49;
+  transition: top ease 1.5s;
+  box-shadow: -1px 4px 12px -7px rgba(84, 84, 84, 0.65);
+  -webkit-box-shadow: -1px 4px 12px -7px rgba(84, 84, 84, 0.65);
+  -moz-box-shadow: -1px 4px 12px -7px rgba(84, 84, 84, 0.65);
+}
+
+/*media queries so that the card does not overlap with the logo in the top left corner. */
+
+@media screen and (max-width: 1000px) {
+  .card .button-wrapper button {
+    width: 94%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 900px) {
+  .card {
+    margin-top: 22vh;
+    width: 50%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 85%;
   }
 }
